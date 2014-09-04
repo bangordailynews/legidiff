@@ -139,7 +139,7 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': False,
         },
-        'maine_legis': {
+        'legidiff': {
             'handlers': ['console', 'logfile'],
             'level': 'DEBUG',
         },
