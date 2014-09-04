@@ -22,11 +22,6 @@ SECRET_KEY = 'yc*xohzn!4j(kv7f)7ml(9bh)qovs7@*t-k$$tl_uab%+@bk&z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
-
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -36,8 +31,29 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'bill'
 )
+
+
+TEMPLATE_DEBUG = True
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+
+# Install Jinja2 via django-jinja.
+
+DEFAULT_JINJA2_TEMPLATE_EXTENSION = '.jinja'
+
+TEMPLATE_LOADERS = (
+    'django_jinja.loaders.AppLoader',
+    'django_jinja.loaders.FileSystemLoader'
+)
+
+INSTALLED_APPS += ('django_jinja'),
+
+ALLOWED_HOSTS = []
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
