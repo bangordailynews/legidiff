@@ -2,10 +2,11 @@
     <head>
         <title> {{ title }} </title>
         <link href="{{ static('css/bill.css') }}" rel="stylesheet" type="text/css" media="all">
+        <link href="{{ static('css/ghdiff.css') }}" rel="stylesheet" type="text/css" media="all">
     </head>
     <body>
-        <h1> {{ bill.id }} <h1>
-        <h2> {{ bill.description }} <h2>
+        <h1> {{ bill.id }} </h1>
+        <h2> {{ bill.description }} </h2>
         <div class="table">
             <div class="table-row">
                 <div class="table-cell">
@@ -17,7 +18,9 @@
             </div>
         </div>
         <div id="diff">
+          {% autoescape false %} 
             {{ diff }}
+          {% endautoescape %} 
         </div>
     </body>
 </html>
