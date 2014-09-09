@@ -549,7 +549,7 @@
   function fetchTheme(th, cb) {
     var name = th.split('/').pop()
 
-    asyncLoad("/js/theme-"+ name +".js", function() {
+    asyncLoad("/static/js/theme-"+ name +".js", function() {
 
       editor.setTheme(th)
 
